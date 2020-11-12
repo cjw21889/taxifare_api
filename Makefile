@@ -28,7 +28,7 @@ deploy_heroku:
 	-@heroku ps:scale web=1
 
 heroku_set_gcp_env:
-	-@heroku config:set GOOGLE_APPLICATION_CREDENTIALS="$(< /Users/jbizot/Documents/wagon-bootcamp-256316-51756099e206.json)"
+	-@heroku config:set GOOGLE_APPLICATION_CREDENTIALS="$(/Users/chriswesterman/keys/gcp_keys/Wagon-Bootcamp-d5dae5ec3fda.json)"
 
 heroku_update: deploy_heroku heroku_set_gcp_env
 # ----------------------------------

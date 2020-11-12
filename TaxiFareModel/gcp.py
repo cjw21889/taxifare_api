@@ -32,7 +32,7 @@ def storage_upload(model_version=MODEL_VERSION, bucket=BUCKET_NAME, rm=False):
         os.remove('model.joblib')
 
 
-def download_model(model_version=MODEL_VERSION, bucket=BUCKET_NAME, rm=True):
+def download_model(model_version=MODEL_VERSION, bucket=BUCKET_NAME, rm=True, **kwargs):
     creds = get_credentials()
     client = storage.Client(credentials=creds, project=PROJECT_ID).bucket(bucket)
 
@@ -47,3 +47,7 @@ def download_model(model_version=MODEL_VERSION, bucket=BUCKET_NAME, rm=True):
     if rm:
         os.remove('model.joblib')
     return model
+
+
+if __name__ == '__main__':
+    download_model()
